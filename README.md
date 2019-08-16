@@ -6,4 +6,4 @@
 
 # License
 
- <b>[Anti-996](https://github.com/996icu/996.ICU)</b>
+ <b>[Anti-996](LICENSE)</b>
