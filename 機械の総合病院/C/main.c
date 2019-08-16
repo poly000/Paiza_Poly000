@@ -5,14 +5,20 @@ struct passwd {
     short len,status[256];
     _Bool Num,Let;
 };
-int main(void) {    
+int main(void){
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
+    
     struct passwd pass_;
     unsigned int i;
     char str[1000];
     pass_.text = str;
     fgets(str, sizeof(str), stdin);
     
-    if ((pass_.len = strlen(pass_.text))>6) {
+    pass_.len = strlen(pass_.text);
+    pass_.text[pass_.len--] = 0;
+    
+    if (pass_.len > 6) {
         printf("Invalid");
         return 0;
     }
@@ -50,8 +56,3 @@ int main(void) {
     printf("Valid");
     return 0;
 }
-/ * standard: C99
-  * copyright: 2019 poly000
-  * LICENSE: Anti-996
-
-  * /
