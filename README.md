@@ -1,4 +1,4 @@
-# Paiza_Poly000
+# Paiza_ans
 
  My answer for Paiza's game named "エンジニアが死滅シタ世界".
 
