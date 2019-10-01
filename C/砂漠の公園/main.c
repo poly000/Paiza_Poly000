@@ -38,7 +38,7 @@ int main(void) {
     max = p;
     for (i=0; i<n; i++) {
         if ((p+i)->score > max->score) {
-            max = p;
+            max = p+i;
         }
     }
     printf("%u %u %u %u %u",max->id,max->score,max->w,max->d,max->l);
