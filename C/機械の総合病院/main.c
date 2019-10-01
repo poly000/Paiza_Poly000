@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -18,13 +19,16 @@ int main(void){
     pass_.len = strlen(pass_.text);
     pass_.text[pass_.len--] = 0;
     
-    if (pass_.len > 6) {
+    for (i=0; i<=pass_.len; i++)
+        pass_.text[i] = tolower(pass_.text[i]);
+    
+    if (pass_.len < 6) {
         printf("Invalid");
         return 0;
     }
     
     for (i=0; i<pass_.len; i++) {
-        if ((pass_.text[i] <= 'Z'  &&  pass_.text[i] >= 'A') || (pass_.text[i] <= 'z'  &&  pass_.text[i] >= 'a')) {
+        if (pass_.text[i] <= 'z'  &&  pass_.text[i] >= 'a') {
             pass_.Let = 1;
         } else {
             if (pass_.text[i] <= '9'  &&  pass_.text[i] >= '0') {
@@ -39,6 +43,7 @@ int main(void){
     }
     
     pass_.len -= 2;
+    
     for (i=0; i<pass_.len; i++) {
         if ((pass_.text[i] == pass_.text[i+1]) && (pass_.text[i] == pass_.text[i+2])) {
             printf("Invalid");
@@ -49,8 +54,3 @@ int main(void){
     printf("Valid");
     return 0;
 }
-/* standard: C99
- * copyright: 2019 poly000
- * LICENSE: Anti-996
-
- */
