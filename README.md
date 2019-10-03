@@ -6,4 +6,4 @@
 
 # License
 
- <b>[Anti-996](LICENSE)</b>
+WTFPL
