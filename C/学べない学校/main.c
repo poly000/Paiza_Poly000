@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 typedef struct {
-    unsigned short score;
     int hand;
+    unsigned short score;
 }person;
 
 int main(void) {
