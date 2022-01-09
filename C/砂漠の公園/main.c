@@ -7,6 +7,9 @@ typedef struct {
     unsigned int w,d,l;
 }group;
 
+void update_score(group [],const unsigned);
+group * max_score(group [],const unsigned);
+
 int main(void) {
     unsigned int n;
     scanf("%u",&n);
@@ -14,16 +17,16 @@ int main(void) {
     
     group p[n];
     
-    update_score(p);
-    group * max = max_score(p);
+    update_score(p, n);
+    group * max = max_score(p, n);
     
     printf("%u %u %u %u %u",max->id, max->score, max->w, max->d, max->l);
     return 0;
 }
 
-group * max_score(const group p[const]) {
+group * max_score(group p[], const unsigned n) {
     group * max = p;
-    for (i=1; i<n; i++) {
+    for (int i=1; i<n; i++) {
         if (p[i].score > max->score) {
             max = &p[i];
         }
@@ -31,11 +34,11 @@ group * max_score(const group p[const]) {
     return max;
 }
 
-void update_score(const group p[]) {
-    for (i=0; i<n; i++) {
+void update_score(group p[],const unsigned n) {
+    for (int i=0; i<n; i++) {
         p[i].id = i+1;
         p[i].w = p[i].d = p[i].l = p[i].score = 0;
-        for (j=0; j<n; j++) {
+        for (int j=0; j<n; j++) {
             switch (getchar()) {
                 case 'W':
                     p[i].score += 2;
